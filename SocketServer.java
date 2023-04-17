@@ -31,7 +31,7 @@ public class SocketServer {
                         while ((inLine = in.readLine()) != null) {
                             Random rand = new Random();
                             String qotd = quotes[rand.nextInt(quotes.length)];
-                            System.out.println(inLine);
+                            System.out.println("Received message: " + inLine);
                             out.println(qotd);
                         }
                         System.out.println();

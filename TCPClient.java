@@ -29,7 +29,7 @@ public class TCPClient {
             String inLine;
             while ((inLine = in.readLine()) != null) {
                 LOGGER.log(Level.INFO, "Receiving: {0}", inLine);
-                System.out.println(inLine);
+                System.out.println("Received: " + inLine);
             }
 
         } catch (IOException err) {

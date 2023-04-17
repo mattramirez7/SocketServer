@@ -14,9 +14,9 @@ public class UDPClient {
         message = message.trim();
 
         DatagramSocket udpSocket = null;
+        System.out.println("UDP Client connected on port " + port + " to server: " + host);
         try {
             InetAddress address = InetAddress.getByName(host);
-            System.out.println("UDP Client connected on port " + port + " to server: " + address.getCanonicalHostName());
             
             udpSocket = new DatagramSocket();
             byte[] requestData = message.getBytes("UTF-8");
@@ -28,7 +28,7 @@ public class UDPClient {
             udpSocket.receive(responsePacket);
 
             String replyContent = new String(buffer);
-            System.out.println("Received reply: " + replyContent);
+            System.out.println("Received: " + replyContent);
             udpSocket.close();
         
         } catch (IOException err) {
